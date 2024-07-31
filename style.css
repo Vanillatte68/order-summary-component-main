@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: hsl(245, 75%, 52%);
+  --primary-text-color: hsl(223, 47%, 23%);
+  --default-text-color: hsl(224, 23%, 55%);
+  --bg-default: hsl(225, 100%, 98%);
+  --bg-primary: hsl(225, 100%, 94%);
+  --primary-active: hsl(245, 75%, 52%, 0.7);
+}
+
+body {
+  background: url(./images/pattern-background-desktop.svg) no-repeat;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+main {
+  background-color: var(--bg-default);
+  border-radius: 1.5rem;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+}
+
+.container-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  gap: 1.25rem;
+}
+
+.container-img {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.container-img img {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  max-width: 350px;
+  width: 100%;
+}
+
+h1 {
+  color: var(--primary-text-color);
+}
+
+p {
+  margin: 0 1rem;
+  line-height: 1.5;
+  color: var(--default-text-color);
+}
+
+.container-price {
+  display: grid;
+  grid-template-areas:
+    "ico span1 url"
+    "ico span2 url";
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(225, 100%, 94%, 0.3);
+  width: 100%;
+  column-gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+}
+
+.container-ico {
+  grid-area: ico;
+  height: min-content;
+}
+
+.price-h {
+  grid-area: span1;
+  font-weight: 700;
+  color: var(--primary-text-color);
+}
+
+.price-p {
+  grid-area: span2;
+  color: var(--default-text-color);
+}
+
+.container-price a {
+  grid-area: url;
+  margin-left: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.container-price a:hover,
+.container-price a:active {
+  color: var(--primary-active);
+}
+
+button {
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.btn-confirm {
+  background-color: var(--primary-color);
+  color: var(--bg-default);
+  box-shadow: 0px 20px 29px -5px hsl(224, 23%, 55%, 0.6);
+  transition: 0.3s ease-in-out;
+}
+
+.btn-confirm:hover,
+.btn-confirm:active {
+  background-color: var(--primary-active);
+}
+
+.btn-confirm:hover {
+  transform: translateY(8px);
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: var(--primary-text-color);
+}
+
+footer {
+  color: var(--default-text-color);
+  font-size: 0.7rem;
+}
+
+footer a {
+  color: inherit;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    background: url(./images/pattern-background-mobile.svg) no-repeat;
+    background-color: var(--bg-primary);
+  }
+}
